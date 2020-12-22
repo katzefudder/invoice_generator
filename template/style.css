@@ -1,0 +1,97 @@
+@page {
+    margin: 5cm 2cm 5cm 2cm;
+/*
+    @top-right {
+        content: url("logo.png");
+    }
+*/
+    @bottom-left {
+        white-space: pre;
+        text-align: left;
+        font-size: 8pt;
+        content: "Florian Dehn" "\a"
+                 "Feldbornstrasse 2" "\a"
+                 "35510 Butzbach" "\a"
+                 "Tel.: +49 (0)6033/3548984" "\a"
+                 "Mobil: +49 (0)151/24147281" "\a"
+                 "Web: https://www.katzefudder.de" "\a"
+                 "Steuernummer: 1681131743" "\a"
+                 "\a" "\a"
+    }
+    @bottom-center {
+        white-space: pre;
+        text-align: left;
+        font-size: 8pt;
+        content: 
+                 "Seite " counter(page)
+                 " von " counter(pages)
+    }
+    @bottom-right {
+        white-space: pre;
+        text-align: left;
+        font-size: 8pt;
+        content: "IBAN: DE88 5154 0037 0124 7535 00" "\a"
+                 "BIC: COBADEFFXXX" "\a"
+                 "Bank: Commerzbank" "\a"
+                 "\a" "\a" "\a"
+                 
+    }    
+}
+
+html {
+    font-size: 10pt;
+    font-family: "Arial";
+}
+
+.section {
+    margin-top: 1cm;
+}
+
+/**
+ * Address table
+ */
+ .adressTable tr:nth-child(1) td {
+     border-bottom: 1px solid black;
+ }
+
+ .small {
+     font-size: 8pt;
+ }
+
+/**
+ * Info table
+ */
+.infoTable {
+    margin-top: 3cm;
+    width: 100%;
+}
+
+/**
+ * Invoice table
+ */
+.invoiceTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.invoiceTable td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.invoiceTable thead {
+    background: lightgray;
+}
+
+.invoiceTable .padrow {
+    height: 10px;
+}
+
+.invoiceTable .tfoot td {
+    border: none;
+    padding: 2px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
