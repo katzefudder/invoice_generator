@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from lib.invoice import Invoice
 from lib.item import Item
 import argparse
