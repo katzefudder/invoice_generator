@@ -1,4 +1,4 @@
 pytest
-yaml
-pybars
-weasyprint
+PyYAML
+pybars3
+WeasyPrint
