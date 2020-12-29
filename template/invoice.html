@@ -17,7 +17,7 @@
         <div class="section">
             <table class="infoTable">
                 <tr>
-                    <td><b>Rechnung {{invoice.number}}</b></td>
+                    <td><b>Rechnung {{invoice.invoice_number}}</b></td>
                     <td>Kundennummer: {{invoice.customer_number}}</td>
                 </tr>
                 <tr>
@@ -36,7 +36,7 @@
                         <td>Anzahl</td>
                         <td>Einzelpreis</td>
                         <td>Steuersatz</td>
-                        <td>Netto</td>
+                        <td>net</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,9 +45,9 @@
                         <td>{{index}}</td>
                         <td>{{{name}}}</td>
                         <td>{{amount}}</td>
-                        <td class="nowrap">{{netto_price}} {{@root.currency}}</td>
+                        <td class="nowrap">{{net_price}} {{@root.currency}}</td>
                         <td class="nowrap">{{tax_rate}} %</td>
-                        <td class="nowrap">{{total_netto_price}} {{@root.currency}}</td>
+                        <td class="nowrap">{{total_net_price}} {{@root.currency}}</td>
                     </tr>
                     {{/items}}
                     <tr class="tfoot">
@@ -56,8 +56,8 @@
                     <tr class="tfoot">
                         <td class="noborder"></td>
                         <td class="noborder"></td>
-                        <td colspan="3"> Nettogesamt</td>                    
-                        <td class="nowrap" colspan="2">{{totals.netto}} {{@root.currency}}</td>                    
+                        <td colspan="3"> Netto gesamt</td>                    
+                        <td class="nowrap" colspan="2">{{totals.net}} {{@root.currency}}</td>                    
                     </tr>
                     <tr class="tfoot">
                         <td class="noborder"></td>
@@ -69,7 +69,7 @@
                         <td class="noborder"></td>
                         <td class="noborder"></td>
                         <td colspan="3"> Rechnungsbetrag</td>                    
-                        <td class="nowrap" colspan="2">{{totals.brutto}} {{@root.currency}}</td>                    
+                        <td class="nowrap" colspan="2">{{totals.gross}} {{@root.currency}}</td>                    
                     </tr>                                
                 </tbody>
             </table>

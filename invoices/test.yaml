@@ -1,0 +1,13 @@
+from: 
+    invoice_number: "000001"
+    name: John Doe
+    street: Random Street
+    city: Random Town
+    postcode: 4711
+
+to:
+    customer_number: 10002
+    name: Jane Doe
+    street: Random Other Street
+    city: Random Other Town
+    postcode: 4711815
