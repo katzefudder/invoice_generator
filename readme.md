@@ -1,6 +1,6 @@
 # Invoice Generator
 Inspired by https://github.com/ecmonline/invoice-generator
 
-![rendered invoice](https://raw.githubusercontent.com/katzefudder/invoice-generator/master/invoice.png)
+![rendered invoice](https://github.com/katzefudder/invoice_generator/blob/master/invoice.png)
 
-Usage see ``
+Usage see `invoice.py --help`
