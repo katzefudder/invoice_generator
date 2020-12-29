@@ -1,4 +1,4 @@
-name: Testing Invoice
+name: Testing-Invoice
 
 on:
   push:
