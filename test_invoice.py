@@ -1,6 +1,5 @@
 from lib.invoice import Invoice
 from lib.item import Item
-from lib.aws_item import AwsItem
 import pytest
 import os
 
