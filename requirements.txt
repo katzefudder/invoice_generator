@@ -1,5 +1,4 @@
 pytest
-codecs
 yaml
 pybars
 weasyprint
