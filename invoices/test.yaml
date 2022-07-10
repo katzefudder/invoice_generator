@@ -25,3 +25,10 @@ items:
         price: 3.98
         amount: 2
         tax: 20
+    S3 und AWS Cloud Front:
+        profile: aws_profile
+        description: S3 und AWS CloudFront
+        type: aws_item
+        tag: cost_tag
+        amount: 1
+        tax: 19
