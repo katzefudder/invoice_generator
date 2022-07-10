@@ -1,4 +1,6 @@
 pytest
+pytest-mock
 PyYAML
 pybars3
 WeasyPrint
+boto3

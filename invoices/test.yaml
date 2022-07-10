@@ -11,3 +11,17 @@ to:
     street: Random Other Street
     city: Random Other Town
     postcode: 4711815
+
+items:
+    Ein Sack Reis:
+        description: "Ein Sack Reis"
+        type: item
+        price: 2.54
+        amount: 3
+        tax: 20
+    Zwei Dosen Luft:
+        description: "Zwei Dosen Luft"
+        type: item
+        price: 3.98
+        amount: 2
+        tax: 20

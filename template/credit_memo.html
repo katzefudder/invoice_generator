@@ -17,8 +17,11 @@
         <div class="section">
             <table class="infoTable">
                 <tr>
-                    <td><b>Rechnung {{invoice.invoice_number}}</b></td>
+                    <td>Gutschriftnummer <b>{{invoice.credit_number}}</b></td>
                     <td>Kundennummer: {{invoice.customer_number}}</td>
+                </tr>
+                <tr>
+                    <td>Gutschrift zu Rechnung {{invoice.invoice_number}}</td>
                 </tr>
                 <tr>
                     <td class="small">Das Rechnungsdatum entspricht dem Leistungsdatum.</td>
@@ -68,17 +71,12 @@
                     <tr class="tfoot">
                         <td class="noborder"></td>
                         <td class="noborder"></td>
-                        <td colspan="3"> Rechnungsbetrag</td>                    
+                        <td colspan="3"> Gutschriftsbetrag</td>                    
                         <td class="nowrap" colspan="2">{{totals.gross}} {{@root.currency}}</td>                    
                     </tr>                                
                 </tbody>
             </table>
         </div>
         
-        <div class="section">
-            <p>Vielen Dank für Ihren Auftrag.</p>
-            <p>Bitte begleichen Sie den offenen Betrag bis zum {{invoice.pay_until_date}}.</p>
-        </div>
-
     </body>
 </html>

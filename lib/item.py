@@ -12,14 +12,19 @@ class Item:
             raise Exception('price cannot be negative')
         if (amount < 0):
             raise Exception('amount cannot be negative')
+        if (tax < 0):
+            raise Exception('tax cannot be negative')
 
         self.description = description
         self.price = price
         self.amount = amount
         self.tax = tax
 
-        self.total_price_net = round(price * amount, 2)
-        self.total_tax = self.total_price_net * (tax / 100)
+        self.calc_price()
+
+    def calc_price(self):
+        self.total_price_net = self.price * self.amount
+        self.total_tax = self.total_price_net * (self.tax / 100)
         self.total_price = self.total_price_net + self.total_tax
 
     def get_description(self):
@@ -32,13 +37,13 @@ class Item:
         return self.price
 
     def get_total_tax(self):
-        return self.total_tax
+        return round(self.total_tax, 2)
 
     def get_total_price(self):
         return round(self.total_price, 2)
 
     def get_total_price_net(self):
-        return round(self.total_price_net, 2)
+        return round(self.total_price_net, 3)
 
     def get_amount(self):
         return self.amount

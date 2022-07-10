@@ -1,1 +1,4 @@
 __pycache__/
+*.pdf
+invoices/*.yaml
+lib/__pycache__/*
