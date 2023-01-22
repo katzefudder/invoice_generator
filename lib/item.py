@@ -19,13 +19,13 @@ class Item:
         self.price = price
         self.amount = amount
         self.tax = tax
-
         self.calc_price()
 
     def calc_price(self):
         self.total_price_net = self.price * self.amount
         self.total_tax = self.total_price_net * (self.tax / 100)
         self.total_price = self.total_price_net + self.total_tax
+        return self
 
     def get_description(self):
         return self.description

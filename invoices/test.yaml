@@ -5,6 +5,9 @@ from:
     city: Random Town
     postcode: 4711
 
+from_date: "2021-01-01"
+to_date: "2021-01-31"
+
 to:
     customer_number: 10002
     name: Jane Doe

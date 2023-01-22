@@ -1,16 +1,20 @@
+from argparse import FileType
 from operator import inv
+from unicodedata import name
 
 from lib.invoice import Invoice
 from lib.item import Item
 import pytest
 import os
+import io
 
 def test_simple_invoice(mocker):
     mocker.patch('lib.aws_item.AwsItem.get_costs_and_usage_from_aws', return_value=None)
+    
+    filename = "/tmp/test.pdf"
+    output = open(file=filename, mode='w')
 
-    from_date = "2021-01-01"
-    to_date = "2021-01-31"
-    invoice = Invoice("invoices/test.yaml", fromDate=from_date, toDate=to_date)
+    invoice = Invoice(data="invoices/test.yaml", output=output)
     invoice.set_template('template/invoice.html')
     data = invoice.get_document_data()
     assert data['from']['name'] == 'John Doe'
@@ -54,11 +58,18 @@ def test_simple_invoice(mocker):
     assert third_item.total_price_net == 0.00
     assert third_item.get_total_tax() == 0.00
 
-    invoice.prepare_invoice_items()
     assert invoice.document_data['totals']['tax'] == "3.11"
     assert invoice.document_data['totals']['gross'] == "18.69"
     assert invoice.document_data['totals']['net'] == "15.58"
 
-    invoice.output_pdf('test.pdf')
     #assert os.path.exists('test.pdf')
 
+def test_crooked_yaml(mocker):
+    mocker.patch('lib.aws_item.AwsItem.get_costs_and_usage_from_aws', return_value=None)
+
+    invoice = Invoice(data="invoices/not_available.yaml")
+    with pytest.raises(IOError) as excinfo:   
+        invoice.process_invoice_document()
+    
+    invoice.set_template('template/invoice.html')
+    data = invoice.get_document_data()

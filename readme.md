@@ -7,6 +7,9 @@ Inspired by https://github.com/ecmonline/invoice-generator
 
 Usage see `invoice.py --help`
 
+## Install Requirements
+`python -m pip install -r requirements.txt`
+
 ## Ideas / Backlog
 
 * Introduce Database
